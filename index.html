@@ -1,115 +1,276 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Baystation 12</title>
+		<link rel="icon" href="/favicon.ico">
+		<style>
+			@keyframes bgScroll {
+				from { background-position: 0 0; }
+				to { background-position: 0 -100%; }
+			}
+			@keyframes monkeyMove {
+				from { left: 100px; top: 2000px; }
+				to { left: 800px; top: -2000px; }
+			}
+			@keyframes meteor1Move {
+				from { left: 100px; top: 3000px; }
+				to { left: 100px; top: -1000px; }
+			}
+			@keyframes meteor2Move {
+				from { right: 150px; top: 2500px; }
+				to { right: 150px; top: -1500px; }
+			}
+			@keyframes syndicate1Move {
+				from { left: 400px; top: -1000px; }
+				to { left: 400px; top: 3000px; }
+			}
+			@keyframes syndicate2Move {
+				from { right: 300px; top: -1500px; }
+				to { right: 300px; top: 2500px; }
+			}
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!-- Website coded and developed by Snapshot -->
-<!-- Copyright Baystation12 and Snapshot 2014 -->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="eng" lang="eng">
-
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="shortcut icon" href="favicon.ico">
-    <title>Baystation 12 - Index </title>
-    <script src="js/jquery-2.1.4.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/components/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/components/site.css">
-
-    <link rel="stylesheet" type="text/css" href="css/components/container.css">
-    <link rel="stylesheet" type="text/css" href="css/components/grid.css">
-    <link rel="stylesheet" type="text/css" href="css/components/header.css">
-    <link rel="stylesheet" type="text/css" href="css/components/image.css">
-    <link rel="stylesheet" type="text/css" href="css/components/menu.css">
-
-    <link rel="stylesheet" type="text/css" href="css/components/divider.css">
-    <link rel="stylesheet" type="text/css" href="css/components/list.css">
-    <link rel="stylesheet" type="text/css" href="css/components/segment.css">
-    <link rel="stylesheet" type="text/css" href="css/components/dropdown.css">
-    <link rel="stylesheet" type="text/css" href="css/components/icon.css">
-    <link rel="stylesheet" type="text/css" href="css/components/message.css">
-    <link rel="stylesheet" type="text/css" href="css/components/button.css">
-    <link rel="stylesheet" type="text/css" href="css/components/dimmer.css">
-    <link rel="stylesheet" type="text/css" href="css/components/statistic.css">
-    <link rel="stylesheet" type="text/css" href="css/components/divider.css">
-    <link rel="stylesheet" type="text/css" href="css/components/segment.css">
-    <link rel="stylesheet" type="text/css" href="css/components/form.css">
-    <link rel="stylesheet" type="text/css" href="css/components/input.css">
-    <link rel="stylesheet" type="text/css" href="css/components/button.css">
-    <link rel="stylesheet" type="text/css" href="css/components/list.css">
-    <link rel="stylesheet" type="text/css" href="css/components/message.css">
-    <link rel="stylesheet" type="text/css" href="css/components/icon.css">
-    <script src="js/components/form.js"></script>
-    <script src="js/components/transition.js"></script>
-    <script src="js/index.js"></script>
-</head>
-
-<body>
-    <div id="wrapper">
-        <div id="bg"></div>
-        <div class="main">
-            <div id="meteor1"></div>
-            <div id="monkey"></div>
-            <div id="meteor2"></div>
-            <div id="syndicate1"></div>
-            <div id="syndicate2"></div>
-            <div class="ui one column grid centered">
-                <div class="twelve wide column">
-                    <img src="https://baystation12.net/forums/logo.png">
-                    <div class="ui stackable four labeled icon item menu">
-                        <a class="item" href="https://baystation12.net/forums">
-                            <i class="comments icon"></i> Forums
-                        </a>
-                        <a class="item" href="http://wiki.baystation12.net">
-                            <i class="browser icon"></i> Wiki
-                        </a>
-                        <a class="item" href="https://github.com/Baystation12/Baystation12/">
-                            <i class="github icon" ></i> Github
-                        </a>
-                        <a class="item" href="byond://baystation12.net:8000">
-                            <i class="gamepad icon"></i> Play
-                        </a>
-                    </div>
-                    <div class="ui raised segment red">
-                    <div class="ui three statistics">
-                        <div class="statistic blue">
-                            <div class="label">
-                                Players
-                            </div>
-                            <div class="value" id="player">
-                                22
-                            </div>
-                        </div>
-                        <div class="statistic teal">
-                            <div class="label">
-                                Mode
-                            </div>
-                            <div class="value" id="mode">
-                                Secret
-                            </div>
-                        </div>
-                        <div class="statistic violet">
-                            <div class="label">
-                                Round Duration
-                            </div>
-                            <div class="value" id="admin">
-                                00:00
-                            </div>
-                        </div>
-                    </div>
-                        <p></p>
-                        We are a heavy roleplaying server for the game 'Space Station 13' on the <a href="http://www.byond.com/">BYOND </a> platform where you play as an employee of the trans-stellar corporation known as Nanotrasen, working on one of their research stations posted on the fringes of colonized space.
-                        <br/>
-                        <br/> The frontier is a dangerous place, however, and Nanotrasen has made many enemies on their rise to power. Spies, saboteurs, hostile aliens, dangerous computer programs, and people with seemingly supernatural abilities. Lax hiring standards mean accidents are commonplace, and it's a very thin barrier that holds the uncaring, airless space at bay.
-                        <br />
-                        <br/> So who will you be? An engineer, tasked to keep the station powered and intact enough to be hospitable; a scientist who advances human knowledge about alien artifacts or advanced technologies; the station's artificial intelligence, overseeing everything to serve and protect, or one of the dastardly antagonists? Come on over and find out.
-                        <br />
-                    </div>
-                </div>
-            </div>
-            <div class="ui one column grid centered">
-                <div class="copyright">Copyright Baystation12 2015. Space tiles by Goonstation / <a class="anocolor" href="https://creativecommons.org/licenses/by-sa/2.0/"> CC BY SA 2.0 </a> </div>
-            </div>
-        </div>
-    </div>
-</body>
-
+			body {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				background: #171717;
+				background-size: 560px auto;
+				background-image: url("../images/bg.png");
+				animation: bgScroll 15s linear infinite;
+			}
+			
+			#monkey {
+				z-index: -1;
+				min-width: 128px;
+				min-height: 128px;
+				position: absolute;
+				background-image: url("../images/monkey.png");
+				animation: monkeyMove 48s linear infinite;
+			}
+			
+			#meteor1 {
+				z-index: -1;
+				min-width: 128px;
+				min-height: 128px;
+				position: absolute;
+				background-image: url("../images/l_meteor.gif");
+				animation: meteor1Move 33s linear infinite;
+			}
+			
+			#meteor2 {
+				z-index: -1;
+				min-width: 128px;
+				min-height: 128px;
+				position: absolute;
+				background-image: url("../images/s_meteor.gif");
+				animation: meteor2Move 29s linear infinite;
+			}
+			
+			#syndicate1 {
+				z-index: -1;
+				min-width: 96px;
+				min-height: 384px;
+				position: absolute;
+				background-size: 96px auto;
+				background-image: url("../images/syndicate.png");
+				animation: syndicate1Move 50s linear infinite;
+			}
+			
+			#syndicate2 {
+				z-index: -1;
+				min-width: 96px;
+				min-height: 384px;
+				position: absolute;
+				background-size: 96px auto;
+				background-image: url("../images/syndicate.png");
+				animation: syndicate2Move 55s linear infinite;
+			}
+			
+			html {
+				font-size: 14px;
+			}
+			
+			main {
+				margin-left: 12.5%;
+				margin-right: 12.5%;
+				margin-top: 2rem;
+				min-width: 12rem;
+				font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+			}
+			
+			#banner {
+				white-space: nowrap;
+				font-size: 7rem;
+				font-weight: 700;
+				color: #fff;
+				background-image: url("../images/logo.png");
+				background-repeat: no-repeat;
+				background-size: 120px;
+				padding-left: 120px;
+				padding-bottom: 1rem;
+			}
+			
+			nav {
+				display: flex;
+				overflow: hidden;
+				background-color: #fff;
+				border-radius: 0.3rem;
+				margin-bottom: 1rem;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			nav a {
+				padding: 1rem;
+				flex: 1 1 100%;
+				text-align: center;
+				vertical-align: middle;
+				transition: background-color 0.25s ease-in;
+				border-left: thin solid #ddd;
+				color: #000;
+			}
+			
+			nav a:hover {
+				background-color: #eee;
+			}
+			
+			#content {
+				background-color: #fff;
+				border-radius: 0.3em;
+				padding: 1rem;
+			}
+			
+			#statusDisplay {
+				display: flex;
+			}
+			
+			#statusDisplay div {
+				flex: 1 1 100%;
+				text-align: center;
+			}
+			
+			footer {
+				text-align: center;
+				padding: 2rem;
+				font-size: 0.75rem;
+				color: #aaa;
+			}
+			
+			footer a {
+				color: #fff;
+			}
+			
+			#content p {
+				line-height: 1.5rem;
+			}
+			
+			#players {
+				font-size: 5rem;
+				color: #2185d0;
+			}
+			
+			#mode {
+				font-size: 5rem;
+				color: #00b5ad;
+			}
+			
+			#duration {
+				font-size: 5rem;
+				color: #6435c9;
+			}
+			
+			div header {
+				font-weight: 700;
+			}
+			
+			a img {
+				width: 2rem;
+				height: 2rem;
+				display: inline;
+			}
+			
+			#forums, #wiki, #github, #play {
+				width: 1em;
+				height: 1em;
+				display: inline-block;
+				background-repeat: no-repeat;
+				background-position: center;
+				padding: 1em 1.5em 1em 1em;
+				margin: -1em;
+			}
+			
+			#forums {
+				background-image: url("../images/comment.svg");
+				background-size: 1.5em;
+			}
+			
+			#wiki {
+				background-image: url("../images/sticky-note.svg");
+				background-size: 1.2em;
+			}
+			
+			#github {
+				background-image: url("../images/github.svg");
+				background-size: 1.4em;
+			}
+			
+			#play {
+				background-image: url("../images/gamepad.svg");
+				background-size: 1.6em;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="monkey"></div>
+		<div id="meteor1"></div>
+		<div id="meteor2"></div>
+		<div id="syndicate1"></div>
+		<div id="syndicate2"></div>
+		<main>
+			<header id="banner">Baystation 12</header>
+			<nav>
+				<a href="//baystation12.net/forums"><span id="forums"></span> Forums</a>
+				<a href="//wiki.baystation12.net"><span id="wiki"></span> Wiki</a>
+				<a href="//github.com/Baystation12/Baystation12"><span id="github"></span> Github</a>
+				<a href="byond://baystation12.net:8000"><span id="play"></span> Play</a>
+			</nav>
+			<div id="content">
+				<div id="statusDisplay">
+					<div>
+						<header>PLAYERS</header>
+						<div id="players">???</div>
+					</div>
+					<div>
+						<header>MODE</header>
+						<div id="mode">???</div>
+					</div>
+					<div>
+						<header>ROUND DURATION</header>
+						<div id="duration">??:??</div>
+					</div>
+				</div>
+				<p>We are a heavy roleplaying server for the game 'Space Station 13' on the <a href="https://www.byond.com">BYOND</a> platform where you play as an employee of the trans-stellar corporation known as Nanotrasen, working on one of their research stations posted on the fringes of colonized space.</p>
+				<p>The frontier is a dangerous place, however, and Nanotrasen has made many enemies on their rise to power. Spies, saboteurs, hostile aliens, dangerous computer programs, and people with seemingly supernatural abilities. Lax hiring standards mean accidents are commonplace, and it's a very thin barrier that holds the uncaring, airless space at bay.</p>
+				<p>So who will you be? An engineer, tasked to keep the station powered and intact enough to be hospitable; a scientist who advances human knowledge about alien artifacts or advanced technologies; the station's artificial intelligence, overseeing everything to serve and protect, or one of the dastardly antagonists? Come on over and find out.</p>
+			</div>
+			<footer>
+				Copyright Baystation12 2015-2017, Space tiles by Goonstation / <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY SA 2.0</a>
+			</footer>
+		</main>
+		<script>
+			var req = new XMLHttpRequest();
+			req.onload = function(data) {
+				let json = data.target.response;
+				document.getElementById("players").textContent = json.players;
+				document.getElementById("mode").textContent = json.mode;
+				document.getElementById("duration").textContent = decodeURIComponent(json.roundduration);
+			}
+			req.open("GET", "/status.dat", true);
+			req.responseType = 'json'
+			req.send();
+		</script>
+	</body>
 </html>
